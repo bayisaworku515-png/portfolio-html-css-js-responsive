@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bayisa Worku - Frontend Developer & 3rd-Year Information Systems Student at Haramaya University. Modern, responsive portfolio built with HTML5, CSS3, and Vanilla JavaScript.">
+    <meta name="keywords" content="Bayisa Worku, Frontend Developer, Information Systems, Haramaya University, Web Developer, Portfolio, HTML5, CSS3, JavaScript">
+    <meta name="author" content="Bayisa Worku">
+    <title>Bayisa Worku | Frontend Developer & Information Systems Student</title>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome 6 Icons (CDN with local fallback support) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Deferred Vanilla JavaScript -->
+    <script defer src="js/script.js"></script>
+</head>
+<body>
+
+    <!-- ========================================================= -->
+    <!-- 1. NAVIGATION BAR                                         -->
+    <!-- ========================================================= -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+
+            <!-- Brand Logo -->
+            <a href="#hero" class="nav-brand">
+                <span class="brand-badge"><img src="images/logo.jpg" alt=""></span>
+                <span class="brand-text">
+                    Bayisa <span class="highlight">Worku</span>
+                    <small class="brand-sub">IS Student • Haramaya</small>
+                </span>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#hero" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About & Education</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Utility Actions: Theme Toggle, CTA, and Hamburger -->
+            <div class="nav-actions">
+                <!-- Theme Toggle Button -->
+                <button type="button" id="theme-toggle" class="theme-btn" aria-label="Toggle dark/light theme">
+                    <i class="fa-solid fa-moon" id="theme-icon"></i>
+                </button>
+
+                <!-- Desktop Contact CTA -->
+                <a href="#contact" class="btn btn-sm btn-primary nav-cta">Let's Connect</a>
+
+                <!-- Mobile Hamburger Toggle Button -->
+                <button type="button" id="mobile-toggle" class="mobile-toggle" aria-label="Toggle navigation menu">
+                    <i class="fa-solid fa-bars" id="hamburger-icon"></i>
+                </button>
+            </div>
+
+        </div>
+
+        <!-- Mobile Drawer Menu (Slide-in for smartphones) -->
+        <div class="mobile-drawer" id="mobile-drawer">
+            <ul class="mobile-nav-list">
+                <li><a href="#hero" class="mobile-nav-link active">Home</a></li>
+                <li><a href="#about" class="mobile-nav-link">About & Education</a></li>
+                <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+                <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+                <li><a href="#gallery" class="mobile-nav-link">Gallery</a></li>
+                <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+            </ul>
+            <div class="mobile-drawer-footer">
+                <a href="#contact" class="btn btn-primary btn-block">Let's Connect</a>
+            </div>
+        </div>
+        <!-- Mobile Drawer Backdrop Overlay -->
+        <div class="drawer-backdrop" id="drawer-backdrop"></div>
+    </header>
+
+
+    <!-- ========================================================= -->
+    <!-- 2. HERO SECTION                                           -->
+    <!-- ========================================================= -->
+    <section class="hero-section" id="hero">
+        <div class="container hero-container">
+
+            <!-- Hero Text Content -->
+            <div class="hero-content">
+                <!-- Status Badge -->
+                <div class="status-badge">
+                    <span class="status-dot"></span>
+                    <span>Open to Frontend Internships & Projects</span>
+                </div>
+
+                <div class="hero-headings">
+                    <h6 class="greeting">Hello, I'm</h6>
+                    <h1 class="hero-name">Bayisa <span class="gradient-text">Worku</span></h1>
+                </div>
+
+                <!-- Dynamic Typewriter Line -->
+                <div class="profession-wrapper">
+                    <span class="profession-prefix">I am a </span>
+                    <span id="typewriter" class="typewriter-text">Frontend Developer</span>
+                </div>
+
+                <!-- Bio Description -->
+                <p class="hero-bio">
+                    Third-year <strong>Information Systems student at Haramaya University</strong>, passionate about transforming ideas into modern, responsive, and accessible web experiences using semantic HTML5, CSS3, and dynamic Vanilla JavaScript.
+                </p>
+
+                <!-- Key Information Chips -->
+                <div class="hero-chips">
+                    <span class="chip"><i class="fa-solid fa-location-dot"></i> Ethiopia</span>
+                    <span class="chip"><i class="fa-solid fa-graduation-cap"></i> Haramaya University</span>
+                    <span class="chip"><i class="fa-solid fa-envelope"></i> bayisaworku515@gmail.com</span>
+                </div>
+
+                <!-- Call to Action Buttons -->
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fa-solid fa-rocket"></i> Explore Projects
+                    </a>
+                    <button type="button" id="cv-btn" class="btn btn-secondary">
+                        <i class="fa-solid fa-download" id="cv-icon"></i>
+                        <span id="cv-text">Download CV</span>
+                    </button>
+                </div>
+                <!-- CV Toast Message -->
+                <div id="cv-toast" class="cv-toast hidden">
+                    <i class="fa-solid fa-circle-check"></i> CV initiated (Bayisa-Worku-CV.pdf)!
+                </div>
+
+                <!-- Social Media Channels -->
+                <div class="hero-socials">
+                    <span class="social-label">Follow Me:</span>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-link">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-link">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-link">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-link">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Visual / Avatar Card -->
+            <div class="hero-visual">
+                <div class="avatar-card">
+                    <div class="avatar-glow"></div>
+                    <div class="avatar-frame">
+                        <img src="images/hero-image.jpg" alt="Bayisa Worku" class="avatar-img" onerror="this.style.display='none'; document.getElementById('avatar-fallback').style.display='flex';">
+                        <!-- Fallback Avatar Initials if image file is loading -->
+                        <div id="avatar-fallback" class="avatar-fallback">
+                            <span>BW</span>
+                        </div>
+                    </div>
+                    <div class="avatar-meta">
+                        <h4 class="avatar-name">Bayisa Worku</h4>
+                        <p class="avatar-role">Frontend Web Developer</p>
+                    </div>
+                    <!-- Floating Experience Badge -->
+                    <div class="floating-badge badge-top">
+                        <i class="fa-brands fa-js"></i>
+                        <span>Vanilla JS</span>
+                    </div>
+                    <div class="floating-badge badge-bottom">
+                        <i class="fa-solid fa-code"></i>
+                        <span>Responsive UI</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- 3. ABOUT & EDUCATION SECTION                              -->
+    <!-- ========================================================= -->
+    <section class="about-section" id="about">
+        <div class="container">
+
+            <!-- Section Title -->
+            <div class="section-header">
+                <span class="section-tag">BACKGROUND</span>
+                <h2 class="section-title">About & Academic Journey</h2>
+                <p class="section-subtitle">
+                    Combining academic foundations in Information Systems with hands-on frontend web engineering.
+                </p>
+            </div>
+
+            <div class="about-grid">
+
+                <!-- Academic Card -->
+                <div class="about-card">
+                    <div class="card-header-icon bg-blue">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="about-card-title">B.Sc. in Information Systems</h3>
+                    <p class="institution">Haramaya University • 3rd Year Student</p>
+                    <p class="about-card-desc">
+                        Studying foundational computer science principles, database systems, networking, and systems analysis while specializing in modern, responsive frontend web technologies.
+                    </p>
+
+                    <div class="coursework-box">
+                        <h5 class="coursework-title">Relevant Core Coursework:</h5>
+                        <div class="pills-wrapper">
+                            <span class="pill">Web Architecture</span>
+                            <span class="pill">Database Systems</span>
+                            <span class="pill">Object-Oriented Programming</span>
+                            <span class="pill">Systems Analysis & Design</span>
+                            <span class="pill">Data Communications</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Engineering Philosophy Card -->
+                <div class="about-card">
+                    <div class="card-header-icon bg-indigo">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <h3 class="about-card-title">My Mission & Focus</h3>
+                    <p class="institution">Design • Code • Problem Solve</p>
+                    <p class="about-card-desc">
+                        I believe great digital experiences occur where clean software architecture meets intuitive, human-centered UI design. I build websites that look stunning across all devices and run efficiently with clean Vanilla JavaScript.
+                    </p>
+
+                    <div class="coursework-box">
+                        <h5 class="coursework-title">Core Development Strengths:</h5>
+                        <div class="pills-wrapper">
+                            <span class="pill">Semantic HTML5</span>
+                            <span class="pill">Mobile-First CSS</span>
+                            <span class="pill">DOM Event Handling</span>
+                            <span class="pill">Git Version Control</span>
+                            <span class="pill">UI/UX Wireframing</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- 4. SKILLS & TECHNOLOGIES SECTION                          -->
+    <!-- ========================================================= -->
+    <section class="skills-section" id="skills">
+        <div class="container">
+
+            <div class="section-header">
+                <span class="section-tag">CAPABILITIES</span>
+                <h2 class="section-title">Technical Skills & Tools</h2>
+                <p class="section-subtitle">
+                    My practical technical toolkit categorized by real-world usage and ongoing university studies.
+                </p>
+            </div>
+
+            <div class="skills-grid">
+
+                <!-- Category 1: Frontend Core -->
+                <div class="skill-category-card">
+                    <div class="skill-card-head">
+                        <i class="fa-solid fa-laptop-code text-blue"></i>
+                        <h4>Frontend Languages</h4>
+                    </div>
+                    <ul class="skill-list">
+                        <li class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fa-brands fa-html5"></i> HTML5 (Semantic & SEO)</span>
+                                <span class="skill-badge badge-proficient">Proficient</span>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fa-brands fa-css3-alt"></i> CSS3 (Flexbox & Grid)</span>
+                                <span class="skill-badge badge-proficient">Proficient</span>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fa-brands fa-js"></i> JavaScript (DOM & Events)</span>
+                                <span class="skill-badge badge-learning">Practicing</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Category 2: UI/UX & Styling -->
+                <div class="skill-category-card">
+                    <div class="skill-card-head">
+                        <i class="fa-solid fa-palette text-purple"></i>
+                        <h4>UI/UX & Responsive Design</h4>
+                    </div>
+                    <ul class="skill-list">
+                        <li class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fa-solid fa-mobile-screen"></i> Responsive Web Design</span>
+                                <span class="skill-badge badge-active">Active</span>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fa-solid fa-wand-magic-sparkles"></i> CSS Transitions & Keyframes</span>
+                                <span class="skill-badge badge-active">Active</span>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fa-solid fa-bezier-curve"></i> UI Wireframing & Layouts</span>
+                                <span class="skill-badge badge-active">Active</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Category 3: Tools & Workflow -->
+                <div class="skill-category-card">
+                    <div class="skill-card-head">
+                        <i class="fa-solid fa-screwdriver-wrench text-emerald"></i>
+                        <h4>Tools & Version Control</h4>
+                    </div>
+                    <ul class="skill-list">
+                        <li class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fa-brands fa-git-alt"></i> Git & GitHub</span>
+                                <span class="skill-badge badge-learning">Practicing</span>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fa-solid fa-terminal"></i> VS Code & DevTools</span>
+                                <span class="skill-badge badge-proficient">Proficient</span>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fa-solid fa-cloud-arrow-up"></i> GitHub Pages Deployment</span>
+                                <span class="skill-badge badge-active">Active</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- 5. FEATURED PROJECTS SECTION                              -->
+    <!-- ========================================================= -->
+    <section class="projects-section" id="projects">
+        <div class="container">
+
+            <div class="section-header">
+                <span class="section-tag">PORTFOLIO SHOWCASE</span>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">
+                    Practical projects demonstrating semantic structure, modern responsive design, and dynamic Vanilla JavaScript.
+                </p>
+            </div>
+
+            <!-- Project Category Filter Buttons -->
+            <div class="filter-controls">
+                <button type="button" class="filter-btn active" data-filter="all">All Projects</button>
+                <button type="button" class="filter-btn" data-filter="js">JavaScript DOM</button>
+                <button type="button" class="filter-btn" data-filter="css">Responsive Web</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="projects-grid" id="projects-grid">
+
+                <!-- Project 1: DOM Manipulation Practice -->
+                <article class="project-card" data-category="js">
+                    <div class="project-header">
+                        <span class="project-category-tag tag-blue">JavaScript DOM</span>
+                        <span class="project-icon"><i class="fa-brands fa-js"></i></span>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Interactive DOM Practice Hub</h3>
+                        <p class="project-desc">
+                            Collection of dynamic DOM manipulation exercises: query selectors, interactive element creation, dynamic style toggles, and event-driven interaction.
+                        </p>
+                        <div class="project-tech-tags">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>DOM API</span>
+                            <span>Events</span>
+                        </div>
+                    </div>
+                    <div class="project-footer">
+                        <a href="#hero" class="project-link link-preview">Live Preview <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link link-github">GitHub Code <i class="fa-brands fa-github"></i></a>
+                    </div>
+                </article>
+
+                <!-- Project 2: Personal Portfolio V1 & V2 -->
+                <article class="project-card" data-category="css">
+                    <div class="project-header">
+                        <span class="project-category-tag tag-purple">Responsive Web</span>
+                        <span class="project-icon"><i class="fa-solid fa-mobile-screen"></i></span>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Developer Portfolio V1 & V2</h3>
+                        <p class="project-desc">
+                            A modern, fully responsive personal portfolio featuring dynamic typewriter animation, light/dark mode persistence, image lightbox, and clean CSS Grid/Flexbox layouts.
+                        </p>
+                        <div class="project-tech-tags">
+                            <span>HTML5</span>
+                            <span>CSS Grid</span>
+                            <span>Flexbox</span>
+                            <span>Vanilla JS</span>
+                        </div>
+                    </div>
+                    <div class="project-footer">
+                        <a href="#hero" class="project-link link-preview">Live Preview <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link link-github">GitHub Code <i class="fa-brands fa-github"></i></a>
+                    </div>
+                </article>
+
+                <!-- Project 3: Campus Study Task Manager -->
+                <article class="project-card" data-category="js">
+                    <div class="project-header">
+                        <span class="project-category-tag tag-emerald">JavaScript Web App</span>
+                        <span class="project-icon"><i class="fa-solid fa-list-check"></i></span>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Campus Task & Study Tracker</h3>
+                        <p class="project-desc">
+                            A productivity tool for university students to track course assignments with real-time input verification, task categorization, and state persistence with localStorage.
+                        </p>
+                        <div class="project-tech-tags">
+                            <span>JavaScript</span>
+                            <span>localStorage</span>
+                            <span>Form Validation</span>
+                            <span>CSS3</span>
+                        </div>
+                    </div>
+                    <div class="project-footer">
+                        <a href="#hero" class="project-link link-preview">Live Preview <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link link-github">GitHub Code <i class="fa-brands fa-github"></i></a>
+                    </div>
+                </article>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- 6. PHOTO GALLERY SECTION WITH LIGHTBOX                    -->
+    <!-- ========================================================= -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+
+            <div class="section-header">
+                <span class="section-tag">CAMPUS & JOURNEY</span>
+                <h2 class="section-title">Photo Gallery</h2>
+                <p class="section-subtitle">
+                    Memories, academic experiences at Haramaya University, and learning milestones. Click any photo to enlarge in full resolution.
+                </p>
+            </div>
+
+            <div class="gallery-grid">
+
+                <!-- Gallery Item 1 -->
+                <div class="gallery-card" data-image="images/photo1.jpg" data-title="Campus Life & Academics" data-desc="Academic milestones, lectures, and campus life at Haramaya University.">
+                    <div class="gallery-img-wrapper">
+                        <img src="images/photo1.jpg" alt="Campus Life and Academics" class="gallery-img" onerror="this.src='images/hero-image.jpg'">
+                        <div class="gallery-overlay">
+                            <span class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                            <div class="gallery-caption">
+                                <span class="gallery-tag">Memory 01</span>
+                                <h4 class="gallery-item-title">Campus Life & Academics</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="gallery-card" data-image="images/photo2.jpg" data-title="Web Design & Coding" data-desc="Hands-on coding, designing user interfaces, and solving frontend development challenges.">
+                    <div class="gallery-img-wrapper">
+                        <img src="images/photo2.jpg" alt="Web Design and Coding" class="gallery-img" onerror="this.src='images/hero-image.jpg'">
+                        <div class="gallery-overlay">
+                            <span class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                            <div class="gallery-caption">
+                                <span class="gallery-tag">Memory 02</span>
+                                <h4 class="gallery-item-title">Web Design & Coding</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="gallery-card" data-image="images/photo3.jpg" data-title="Collaboration & Growth" data-desc="Teamwork, shared achievements, and continuous growth as an Information Systems student.">
+                    <div class="gallery-img-wrapper">
+                        <img src="images/photo3.jpg" alt="Collaboration and Growth" class="gallery-img" onerror="this.src='images/hero-image.jpg'">
+                        <div class="gallery-overlay">
+                            <span class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                            <div class="gallery-caption">
+                                <span class="gallery-tag">Memory 03</span>
+                                <h4 class="gallery-item-title">Collaboration & Growth</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- 7. CONTACT SECTION WITH REAL-TIME VALIDATION               -->
+    <!-- ========================================================= -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+
+            <div class="section-header">
+                <span class="section-tag">GET IN TOUCH</span>
+                <h2 class="section-title">Contact Me</h2>
+                <p class="section-subtitle">
+                    Have a question, an internship opportunity, or want to collaborate on a frontend project? Send me a message!
+                </p>
+            </div>
+
+            <div class="contact-layout">
+
+                <!-- Left Column: Contact Details Cards -->
+                <div class="contact-info-panel">
+                    <h3 class="panel-title">Let's Connect</h3>
+                    <p class="panel-desc">
+                        I am currently looking for frontend developer internships and collaborative student projects. Feel free to contact me directly.
+                    </p>
+
+                    <div class="contact-info-list">
+                        <div class="info-item">
+                            <div class="info-icon bg-blue">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="info-details">
+                                <span class="info-label">Email Me</span>
+                                <a href="mailto:bayisaworku515@gmail.com" class="info-value">bayisaworku515@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon bg-indigo">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="info-details">
+                                <span class="info-label">Location</span>
+                                <span class="info-value">Haramaya / Oromia, Ethiopia</span>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon bg-purple">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <div class="info-details">
+                                <span class="info-label">University</span>
+                                <span class="info-value">Haramaya University (IS Dept)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Connect Socials -->
+                    <div class="panel-socials">
+                        <h4>Connect on Social Media:</h4>
+                        <div class="social-pills">
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-pill"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-pill"><i class="fa-brands fa-github"></i> GitHub</a>
+                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-pill"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive Contact Form -->
+                <div class="contact-form-panel">
+                    <!-- Success Banner (revealed by JavaScript on valid submit) -->
+                    <div id="form-alert" class="form-alert hidden">
+                        <i class="fa-solid fa-circle-check alert-icon"></i>
+                        <div>
+                            <strong>Message Sent Successfully!</strong>
+                            <p>Thank you for reaching out. Bayisa will review your message and reply soon.</p>
+                        </div>
+                    </div>
+
+                    <form id="contact-form" class="contact-form" novalidate>
+
+                        <!-- Row 1: Name and Email -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Your Name <span class="required">*</span></label>
+                                <div class="input-wrapper">
+                                    <i class="fa-regular fa-user input-icon"></i>
+                                    <input type="text" id="name" name="name" placeholder="e.g. Abebe Bikila">
+                                </div>
+                                <span class="error-msg" id="name-error">Please enter your name (at least 2 characters).</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Your Email <span class="required">*</span></label>
+                                <div class="input-wrapper">
+                                    <i class="fa-regular fa-envelope input-icon"></i>
+                                    <input type="email" id="email" name="email" placeholder="name@example.com">
+                                </div>
+                                <span class="error-msg" id="email-error">Please enter a valid email address.</span>
+                            </div>
+                        </div>
+
+                        <!-- Row 2: Subject -->
+                        <div class="form-group">
+                            <label for="subject">Subject <span class="required">*</span></label>
+                            <div class="input-wrapper">
+                                <i class="fa-regular fa-bookmark input-icon"></i>
+                                <input type="text" id="subject" name="subject" placeholder="Project inquiry or opportunity">
+                            </div>
+                            <span class="error-msg" id="subject-error">Please enter a subject (at least 4 characters).</span>
+                        </div>
+
+                        <!-- Row 3: Message with Character Counter -->
+                        <div class="form-group">
+                            <div class="label-with-counter">
+                                <label for="message">Your Message <span class="required">*</span></label>
+                                <span id="char-counter" class="char-counter">0 / 250</span>
+                            </div>
+                            <div class="input-wrapper">
+                                <textarea id="message" name="message" rows="5" placeholder="Write your message here..."></textarea>
+                            </div>
+                            <span class="error-msg" id="message-error">Message must be at least 15 characters long.</span>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" id="submit-btn" class="btn btn-primary btn-block">
+                            <span id="submit-text">Send Message</span>
+                            <i class="fa-solid fa-paper-plane" id="submit-icon"></i>
+                        </button>
+
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- 8. FOOTER                                                 -->
+    <!-- ========================================================= -->
+    <footer class="footer">
+        <div class="container footer-container">
+
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#hero" class="footer-logo">Bayisa <span class="highlight">Worku</span></a>
+                    <p class="footer-tagline">
+                        3rd-Year Information Systems Student @ Haramaya University & Aspiring Frontend Developer.
+                    </p>
+                </div>
+
+                <div class="footer-links-col">
+                    <h5 class="footer-heading">Quick Navigation</h5>
+                    <ul class="footer-nav">
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#about">About & Education</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-social-col">
+                    <h5 class="footer-heading">Follow My Journey</h5>
+                    <div class="footer-social-icons">
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright">
+                    © <span id="footer-year">2026</span> Bayisa Worku. All Rights Reserved. Built with semantic HTML5, CSS3 & Modern Vanilla JavaScript.
+                </p>
+                <a href="#hero" class="back-to-top" id="back-to-top" aria-label="Scroll back to top">
+                    Back to Top <i class="fa-solid fa-arrow-up"></i>
+                </a>
+            </div>
+
+        </div>
+    </footer>
+
+
+    <!-- ========================================================= -->
+    <!-- 9. LIGHTBOX MODAL (Image Fullscreen Overlay)               -->
+    <!-- ========================================================= -->
+    <div id="lightbox-modal" class="lightbox-modal hidden" role="dialog" aria-modal="true" aria-label="Photo Lightbox">
+        <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+        <div class="lightbox-content">
+            <button type="button" id="lightbox-close" class="lightbox-close-btn" aria-label="Close modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="lightbox-image-box">
+                <img src="" alt="Enlarged photo" id="lightbox-img" class="lightbox-img">
+            </div>
+            <div class="lightbox-info">
+                <h4 id="lightbox-title" class="lightbox-title">Photo Title</h4>
+                <p id="lightbox-desc" class="lightbox-desc">Photo description details.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
